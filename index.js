@@ -45,6 +45,7 @@ function getPlrToMove(board, plrs){
       }
     }
   }
+  throw new Error(`xCount: ${xCount} oCount: ${oCount}`)
   if(xCount === oCount){
     return plrs[0]
   }else{
@@ -109,7 +110,7 @@ function onPlayerMove(lib, plr, move, boardgame){
     throw new Error("game is not in progress, can't make move!")
   }
   if(getPlrToMove(board, plrs) !== plr){
-    throw new Error("Its not this player's turn: " + plr)
+    throw new Error("Its not this player's turn: " + plr + "determined because board")
   }
   if(board[x][y] !== null){
     throw new Error("Invalid move, someone already marked here: " + x + "," + y)
