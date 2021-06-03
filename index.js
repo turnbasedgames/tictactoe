@@ -38,7 +38,8 @@ function getPlrToMove(board, plrs){
   const oCount = 0;
   for(row in board){
     console.log('row', row)
-    for(mark in row){
+    for(col in board[row]){
+      const mark = board[row][col]
       console.log('mark', mark)
       console.log('mark === X', mark === 'X')
       console.log('mark === X', mark === 'O')
