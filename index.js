@@ -45,7 +45,7 @@ function getPlrToMove(board, plrs){
       }
     }
   }
-  throw new Error(`xCount: ${xCount} oCount: ${oCount}`)
+  console.log(`xCount: ${xCount} oCount: ${oCount}`)
   if(xCount === oCount){
     return plrs[0]
   }else{
