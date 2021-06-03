@@ -14,8 +14,6 @@ function onRoomStart(lib, options){
 }
 
 function onPlayerJoin(lib, plr, boardgame){
-  console.log(boardgame)
-  console.log(boardgame.state)
   // VALIDATIONS
   // check if game has started
   if(boardgame.state !== "NOT_STARTED"){
@@ -34,15 +32,10 @@ function onPlayerJoin(lib, plr, boardgame){
 }
 
 function getPlrToMove(board, plrs){
-  console.log('board', board) 
   let xCount = 0;
   let oCount = 0;
   for(const row of board){
-    console.log('row', row)
     for(const mark of row){
-      console.log('mark', mark)
-      console.log('mark === X', mark === 'X')
-      console.log('mark === X', mark === 'O')
       if (mark === 'X'){
         xCount++;
       }else if(mark === 'O'){
@@ -50,7 +43,6 @@ function getPlrToMove(board, plrs){
       }
     }
   }
-  console.log(`xCount: ${xCount} oCount: ${oCount}`)
   if(xCount === oCount){
     return plrs[0]
   }else{
