@@ -37,7 +37,11 @@ function getPlrToMove(board, plrs){
   const xCount = 0;
   const oCount = 0;
   for(row in board){
+    console.log('row', row)
     for(mark in row){
+      console.log('mark', mark)
+      console.log('mark === X', mark === 'X')
+      console.log('mark === X', mark === 'O')
       if (mark === 'X'){
         xCount++;
       }else if(mark === 'O'){
@@ -110,7 +114,7 @@ function onPlayerMove(lib, plr, move, boardgame){
     throw new Error("game is not in progress, can't make move!")
   }
   if(getPlrToMove(board, plrs) !== plr){
-    throw new Error("Its not this player's turn: " + plr + "determined because board")
+    throw new Error("Its not this player's turn: " + plr)
   }
   if(board[x][y] !== null){
     throw new Error("Invalid move, someone already marked here: " + x + "," + y)
