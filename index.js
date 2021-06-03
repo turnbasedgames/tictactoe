@@ -33,13 +33,13 @@ function onPlayerJoin(lib, plr, boardgame){
   return boardgame
 }
 
-function getPlrToMove(board, plrs){ 
+function getPlrToMove(board, plrs){
+  console.log('board', board) 
   const xCount = 0;
   const oCount = 0;
-  for(row in board){
+  for(const row of board){
     console.log('row', row)
-    for(col in board[row]){
-      const mark = board[row][col]
+    for(const mark of row){
       console.log('mark', mark)
       console.log('mark === X', mark === 'X')
       console.log('mark === X', mark === 'O')
