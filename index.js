@@ -35,8 +35,8 @@ function onPlayerJoin(lib, plr, boardgame){
 
 function getPlrToMove(board, plrs){
   console.log('board', board) 
-  const xCount = 0;
-  const oCount = 0;
+  let xCount = 0;
+  let oCount = 0;
   for(const row of board){
     console.log('row', row)
     for(const mark of row){
