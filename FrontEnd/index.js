@@ -1,16 +1,17 @@
 console.log("javascript running")
 
-document.getElementById('playerMove').onclick = () => {
+function sendMessage() {
     window.top.postMessage(
         JSON.stringify({
-            error: false,
             message: {
-                testFunc: function () {
-                    console.log("clicked")
-                },
-                etc: "message"
+                x: 0,
+                y: 0
             }
         }),
         '*'
     );
+}
+
+document.getElementById('playerMove').onclick = () => {
+    sendMessage();
 }
