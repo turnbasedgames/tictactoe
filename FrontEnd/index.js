@@ -1,15 +1,18 @@
-console.log("javascript running")
+console.log("javascript running 2")
 
-function sendMessage() {
+function sendMessage(givenX, givenY) {
     window.top.postMessage(
         JSON.stringify({
-            x: 0,
-            y: 0
+            x: givenX,
+            y: givenY
         }),
         '*'
     );
 }
 
-document.getElementById('playerMove').onclick = () => {
-    sendMessage();
-}
+$(document).ready(function() {
+    $('.square').click((e) => {
+        const cell = $(e.target);
+        sendMessage(cell.attr('x', cell.attr('y')));
+    })
+})
