@@ -20,6 +20,7 @@ function createForm() {
     ev.preventDefault()
     const move = JSON.parse(input.value)
     console.log("making move", move)
+    client.makeMove(move);
   }
 
   return form;
