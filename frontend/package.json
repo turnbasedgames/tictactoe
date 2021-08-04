@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "dependencies": {
-    "@turnbasedgames/client": "^0.0.3"
+    "@turnbasedgames/client": "^0.0.4"
   },
   "devDependencies": {
     "@turnbasedgames/localrunner": "^0.0.6",
