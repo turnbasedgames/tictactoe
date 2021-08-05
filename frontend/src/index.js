@@ -1,4 +1,6 @@
-import client from '@turnbasedgames/client'
+import {initClient} from '@turnbasedgames/client'
+
+const client = initClient();
 
 function createForm() {
   const form = document.createElement('form');
@@ -16,11 +18,12 @@ function createForm() {
   form.appendChild(document.createElement('br'))
   form.appendChild(document.createElement('br'))
   form.appendChild(submit)
-  form.onsubmit = ev => {
+  form.onsubmit = async (ev) => {
     ev.preventDefault()
     const move = JSON.parse(input.value)
     console.log("making move", move)
-    client.makeMove(move);
+    await client.makeMove(move);
+    console.log("finised making move")
   }
 
   return form;
