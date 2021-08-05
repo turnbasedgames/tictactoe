@@ -21,7 +21,7 @@ function createForm() {
   form.onsubmit = async (ev) => {
     ev.preventDefault()
     const move = JSON.parse(input.value)
-    console.log("making move", move)
+    console.log("making move:", move)
     await client.makeMove(move);
     console.log("finised making move")
   }
